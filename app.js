@@ -1,9 +1,9 @@
-const books = document.querySelectorAll('#book-list li .name');
+const list = document.querySelector('#book-list ul');
 
-Array.from(books).forEach(function(book){
-  book.textContent += ' (Book title)';
+// delete books
+list.addEventListener('click', (e) => {
+  if(e.target.className == 'delete'){
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li);
+  }
 });
-
-const bookList = document.querySelector('#book-list');
-bookList.innerHTML = '<h2>Books and more books...</h2>';
-bookList.innerHTML += '<p>This is how you add HTML content</p>';
